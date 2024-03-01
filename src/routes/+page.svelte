@@ -8,5 +8,7 @@
 	<h1 class="text-4xl mx-auto">Pomodoro Timer</h1>
 	<TimerTabs />
 	<Timer />
-	<Settings />
+	<div class="mx-auto">
+		<Settings />
+	</div>
 </main>
