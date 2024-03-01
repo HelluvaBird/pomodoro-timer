@@ -5,5 +5,6 @@ export const settings = writable({
 	short: 5,
 	long: 15,
 	breaks: 0,
-	isBreak: false
+	isBreak: false,
+	color: 'pink'
 });

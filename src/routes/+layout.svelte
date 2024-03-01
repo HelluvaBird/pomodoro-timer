@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import SettingsModal from '$lib/components/SettingsModal.svelte';
 	import '../app.pcss';
 </script>
 
 <slot />
 {#if $page.state.showModal}
-	<div>Hello there</div>
+	<SettingsModal />
 {/if}
 
 <style lang="postcss">
