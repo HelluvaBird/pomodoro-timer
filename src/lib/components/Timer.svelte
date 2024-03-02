@@ -65,8 +65,6 @@
 	});
 </script>
 
-<pre>{JSON.stringify($settings, null, 2)}</pre>
-
 <div
 	class="mx-auto bg-slate-800 shadow-lg shadow-white/50 size-96 rounded-full grid relative place-items-center"
 >
