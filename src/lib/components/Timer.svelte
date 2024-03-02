@@ -6,7 +6,7 @@
 	let timer = '00:00';
 	let isPaused = true;
 	let timerId: number;
-	let time = $settings.pomodoro;
+	let time = $settings.pomodoro * 60;
 	let percentage = '0';
 
 	function formatTime(time: number) {
@@ -19,11 +19,11 @@
 	function formatPercentage(time: number) {
 		let total;
 		if (!$settings.isBreak) {
-			total = $settings.pomodoro;
+			total = $settings.pomodoro * 60;
 		} else if ($settings.isBreak && $settings.breaks < 4) {
-			total = $settings.short;
+			total = $settings.short * 60;
 		} else {
-			total = $settings.long;
+			total = $settings.long * 60;
 		}
 
 		percentage = (Math.ceil((time / total) * 10) * 10).toString();
@@ -47,18 +47,18 @@
 	function completePomodoro() {
 		clearInterval(timerId);
 		if ($settings.breaks === 4 && $settings.isBreak) {
-			time = $settings.pomodoro;
+			time = $settings.pomodoro * 60;
 			$settings.breaks %= 4;
 			$settings.isBreak = false;
 		} else if ($settings.isBreak) {
-			time = $settings.pomodoro;
+			time = $settings.pomodoro * 60;
 			$settings.isBreak = false;
 		} else if ($settings.breaks < 3) {
-			time = $settings.short;
+			time = $settings.short * 60;
 			$settings.breaks += 1;
 			$settings.isBreak = true;
 		} else {
-			time = $settings.long;
+			time = $settings.long * 60;
 			$settings.breaks += 1;
 			$settings.isBreak = true;
 		}
